@@ -1,0 +1,12 @@
+{
+    "type": "service_account",
+    "project_id": "dragonstone-1524506773397",
+    "private_key_id": "f8268ef326ca03464e3e69ffc7dabb6bcc14a645",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDV+omCURK5zJsW\nA6jGKE/aKsOuTYfo0dqi99osV7XmdDmbQMAu9C3c+MtSzCXsClaw/tXg9zp9fY0l\nKgon3VWyOwlLKWytoc7z4DvnY+4e1zy5MaxRnrL8kAGipQXg0iCgP0OcDb0F61X+\ndbr6wJA7LTpQAn6l74K0UpnWO2+6SdjhWrZSX0/PoBVVxzUqAXMm7uIfSe4xk95v\npzgZabAab11TRy/XaPi9IZDHep9nyuRrZ5EOeI0UgpnLMViFaw/tFtx/iwLh8cVW\nYkzWCPRPzMTJUFZbdCJp7aKmmGhtzP7p1PbTR10wQG2DvS6gzyxmHqV8m4i4VA1z\ny9BmurDfAgMBAAECggEAKGVylWAh5WLLuoW5VKOio6DkLWFksZ8ApDiffzSV2iqB\n/53jSln92JQ9qmVxGVVAVYzequhxqeRMg8IihbEi7xF3KTHqWwNLsz3XgVEb0MW4\nqIvIqOYJi2XScTavW+i/kREwfeMYFuh9ZRsr0BAPiqR4uEcoSsJjThC0Cz5QUv4q\nnymhg58gqOh1fyOW4E5gETX5YmvtTEOiTGQ/H3RCjjAJBR1AVtMg5KTQuog/SpRT\nIXZhFcHIsH0gj4L97RFCE8bbF+grcTp2Z5fV5Pg+WUdfTdKFR9DhsF8HUYEmQqmf\noFUP/tO2rR3GI+iYeAifLOeFfeWB6FTqcA0sqg/aGQKBgQDyZFqrmsIBYQJNLKSu\nNT7Gcmp/T4UwvgwUHb7DM26aMuSSubmh6YbpOxGAlej+1vQJg4no4AacSnQ94tuZ\ne9dGxdv7SYhnbgOUP3BekTLIJ3NFmTN+tZ11woHP+e57bL5Oy6YNNqS1QIp9/oyy\nxx2fHm31YryFgRvRLwAk9EmT5wKBgQDh/dPneaRQl/RgOj6dbcGp08pxo44+4VQy\nJajHlgMnpesqf+6LbzPo7IjZkom3btdrdTIjNSQvSpJt0BLX0E+duNWUPB5zPe3D\nzGE/s9oBDB9XycSdFc4JKzVUQwa64krMwVavLsBRCZihvSS5NP2uJbDTFLq8H+To\nMPtJI5PcSQKBgQC71p8ZKvW7IdUpvzXjNqnuGU6EWDhr/GrZz+870AifAF93gOvl\nGFaPOVIn5oRHsIYvNTtTNwCIb35DUyFAgOLkGoKN6n8FQBEP+lV3Q2gqCcBfqAhq\n4g0i69ezNwjjpvKXl2OYC8d6Goj4eKHKDVncLDWkGp7jipjm81hWSuUV8wKBgQCK\nxum66ssJptatxPawjDbyCBn4gNyYJp0ikle8AJX9YfkwxxEA1RAGiEJdgYxKdamZ\n1oUsc7S9ychz4OPBXa2WiGu3tNdqI2x/4WES0mocXIpeyYuQf1Rf8wWzsdlPKCmQ\n5WVK/KWi3ga5w8Hqbe0eZQzaAo/NeLSEFZgqSMvC6QKBgChhGeJmy6POTGy9sxdU\n5BrTHicNeoBNfqo4FnzQk8OEhCu0XLewaEXhCwwoQNeBUzoASl1tan/9cG3+1av9\nzpRtlk1ewL8rFGPqLIKd/VMhjVBXKCyRURgUhbBS5YjfSVPjE19LIc9iH2kFbpeM\npaFyHh5Zdl+XVHcitZGhn45U\n-----END PRIVATE KEY-----\n",
+    "client_email": "starting-account-ndpd28vey0ls@dragonstone-1524506773397.iam.gserviceaccount.com",
+    "client_id": "102221036741993295552",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://accounts.google.com/o/oauth2/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/starting-account-ndpd28vey0ls%40dragonstone-1524506773397.iam.gserviceaccount.com"
+  }
