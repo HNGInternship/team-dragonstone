@@ -2,6 +2,7 @@
 /bower_components
 /web
 /themes
+/vendor
 
 /hybrid/node_modules
 /hybrid/platforms
@@ -13,3 +14,4 @@ hybrid/plugins/*
 
 .DS_Store
 Thumbs.db
+composer.lock
