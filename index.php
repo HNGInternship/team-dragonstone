@@ -15,7 +15,6 @@
     <?php
         # Includes the autoloader for libraries installed with composer
         require __DIR__ . '/vendor/autoload.php';
-        error_reporting(0);
 
         $currentDir = getcwd();
         $uploadDirectory = "/uploads/";
