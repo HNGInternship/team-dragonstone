@@ -1,7 +1,9 @@
 /vendor
 /node_modules
 /bower_components
+/web
 /themes
+/vendor
 
 /hybrid/node_modules
 /hybrid/platforms
