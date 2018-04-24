@@ -1,0 +1,214 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"redis",
+				"redisData"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/akindukooa/HNGFun/profiles/dev_gb.php",
+		"/Users/akindukooa/workspace/hng/Develop Android Apps Fast(er) – Android Bits – Medium.htm",
+		"/Users/akindukooa/workspace/rose/routes/update.js",
+		"/Users/akindukooa/workspace/rose/utils/client.js",
+		"/Users/akindukooa/workspace/rose/routes/create.js",
+		"/Users/akindukooa/workspace/rose/.gitignore",
+		"/Users/akindukooa/workspace/rose/routes/fetchaccount.js",
+		"/Users/akindukooa/workspace/rose/Dockerfile",
+		"/Users/akindukooa/workspace/rose/utils/logger.js",
+		"/Users/akindukooa/workspace/rose/routes/status.js",
+		"/Users/akindukooa/workspace/rose/.env",
+		"/Users/akindukooa/workspace/hibiscus/routes/processSchedule.js",
+		"/Users/akindukooa/workspace/hibiscus/.env",
+		"/Users/akindukooa/workspace/hibiscus/routes/update.js",
+		"/Users/akindukooa/workspace/hibiscus/routes/newSchedule.js",
+		"/Users/akindukooa/workspace/hibiscus/routes/xml2json.js",
+		"/Users/akindukooa/workspace/hibiscus/routes/scheduleStatus.js",
+		"/Users/akindukooa/workspace/hibiscus/routes/scheduleRequery.js",
+		"/Users/akindukooa/workspace/hibiscus/app.js",
+		"/Users/akindukooa/workspace/hibiscus/routes/multi.js",
+		"/Users/akindukooa/workspace/hibiscus/routes/callback.js",
+		"/Users/akindukooa/workspace/hibiscus/package-lock.json",
+		"/Users/akindukooa/workspace/hibiscus/views/xml2json.ejs",
+		"/Users/akindukooa/workspace/hibiscus/views/json2xml.ejs",
+		"/Users/akindukooa/workspace/hibiscus/views/error.ejs",
+		"/Users/akindukooa/workspace/hibiscus/routes/json2xml.js",
+		"/Users/akindukooa/workspace/hibiscus/logs/2018-03-09-hibiscus.log",
+		"/Users/akindukooa/workspace/hibiscus/logs/2018-03-06-hibiscus.log",
+		"/Users/akindukooa/workspace/hibiscus/routes/error.js",
+		"/Users/akindukooa/workspace/hibiscus/views/answerCode.ejs",
+		"/Users/akindukooa/workspace/hibiscus/routes/status.js",
+		"/Users/akindukooa/workspace/hibiscus/utils/logger.js",
+		"/Users/akindukooa/workspace/pest/routes/entry.js",
+		"/Users/akindukooa/workspace/pest/txt/stanbic.txt",
+		"/Users/akindukooa/workspace/pest/txt/access.txt",
+		"/Users/akindukooa/workspace/pest/txt/fbn.txt",
+		"/Users/akindukooa/workspace/pest/txt/keystone.txt",
+		"/Users/akindukooa/workspace/pest/txt/skye.txt",
+		"/Users/akindukooa/workspace/pest/txt/fidelity.txt",
+		"/Users/akindukooa/workspace/pest/txt/union.txt",
+		"/Users/akindukooa/workspace/pest/txt/qrios.txt",
+		"/Users/akindukooa/workspace/pest/txt/zenith.txt",
+		"/Users/akindukooa/workspace/pest/txt/mcash.txt",
+		"/Users/akindukooa/workspace/pest/txt/diamond.txt",
+		"/Users/akindukooa/workspace/pest/txt/fcmb.txt",
+		"/Users/akindukooa/workspace/pest/txt/uba.txt"
+	],
+	"find":
+	{
+		"height": 39.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "Gruntfile.sublime-project",
+	"replace":
+	{
+		"height": 70.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 175.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
