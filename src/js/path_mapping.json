@@ -3,7 +3,10 @@
   "use": "local",
 
   "cdns": {
-    "jet": "https://static.oracle.com/cdn/jet/v5.0.0/default/js",
+    "jet": {
+      "prefix": "https://static.oracle.com/cdn/jet/v5.0.0/default/js",
+      "config": "bundles-config.js"
+    },
     "3rdparty": "https://static.oracle.com/cdn/jet/v5.0.0/3rdparty"
   },
 

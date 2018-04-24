@@ -1,7 +1,7 @@
 {
   "paths": {
     "source": {
-      "common": "typist",
+      "common": "src",
       "web": "src-web",
       "hybrid": "src-hybrid",
       "javascript": "js",
