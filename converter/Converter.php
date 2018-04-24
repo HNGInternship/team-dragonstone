@@ -1,9 +1,11 @@
 <?php 
 
-//use Google\Cloud\Speech\SpeechClient;
-//use Google\Cloud\Storage\StorageClient;
-//use Google\Cloud\Core\ExponentialBackoff;
+# Includes the autoloader for libraries installed with composer
+require __DIR__ . '/vendor/autoload.php';
 
+use Google\Cloud\Speech\SpeechClient;
+use Google\Cloud\Storage\StorageClient;
+use Google\Cloud\Core\ExponentialBackoff;
 
 /**
  * Converter.php class focusing on GCP, Methods can be abstracted for AWS too
@@ -15,11 +17,15 @@
  * Step 3: Return Json encoded response to the Frontend
  */
 
+
+
+ 
 class Converter {
 
     public $file;
+    public $projectId = "dragonstone-1524506773397";
 
-    public function __construct( $filename='c:/users/documents/wale.mnp3' ) {
+    public function __construct( $filename='audio-samples/amy.wav' ) {
         $this->file = $filename;
     }
     
@@ -42,12 +48,36 @@ class Converter {
         // check if file format is valid
         if (in_array($this->getExtension(), $this->getFormats())) {
             // perform transcribtion  $this->transcribe_async_gcs();
-            echo (json_encode(array ('transcript' => 'works'), JSON_FORCE_OBJECT)); // this is for testing
+            $this->trancribe();
+            //echo (json_encode(array ('transcript' => 'works'), JSON_FORCE_OBJECT)); // this is for testing
         }
         else {
             // return json_encode(array ('transcript' => 'Error: unsupported file format'), JSON_FORCE_OBJECT);
             echo (json_encode(array ('transcript' => 'Error: unsupported file format'), JSON_FORCE_OBJECT)); // this is for testing
         }
+    }
+
+    public function trancribe() {
+        # Instantiates a client
+        $speech = new SpeechClient([
+            'projectId' => $this->projectId,
+            'languageCode' => 'en-US',
+        ]);
+
+        # The audio file's encoding and sample rate
+        $options = [
+            'encoding' => 'LINEAR16',
+            'sampleRateHertz' => 16000,
+        ];
+
+        # Detects speech in the audio file
+        $results = $speech->recognize(fopen($this->file, 'r'), $options);
+
+        $this->sendResponse($results);
+
+        /*foreach ($results as $result) {
+            echo 'Transcription: ' . $result->alternatives()[0]['transcript'] . PHP_EOL;
+        }*/
     }
 
     public function sendResponse( $result ) {
@@ -83,7 +113,7 @@ class Converter {
      * @return string the text transcription
      */
 
-    public function transcribe_async_gcs($bucketName, $objectName, $languageCode = 'en-US', $options = []) {
+    /*public function transcribe_async_gcs($bucketName, $objectName, $languageCode = 'en-US', $options = []) {
         
         // Create the speech client
         $speech = new SpeechClient([
@@ -116,6 +146,6 @@ class Converter {
             // Send response to frontend
             $this->sendResponse($results);
         }
-    }
+    }*/
 
 }
