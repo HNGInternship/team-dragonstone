@@ -7,10 +7,15 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <form method="post" enctype="multipart/form-data">
+        Upload a File:
+        <input type="file" name="myfile" id="fileToUpload">
+        <input type="submit" name="submit" value="Upload File Now" >
+    </form>
     <?php
         # Includes the autoloader for libraries installed with composer
         require __DIR__ . '/vendor/autoload.php';
+        error_reporting(0);
 
         $currentDir = getcwd();
         $uploadDirectory = "/uploads/";
@@ -20,9 +25,9 @@
         $fileSize = $_FILES['myfile']['size'];
         $fileTmpName  = $_FILES['myfile']['tmp_name'];
         $fileType = $_FILES['myfile']['type'];
-        $fileExtension = strtolower(end(explode('.',$fileName)));
+        $tmp = explode('.',$fileName);
+        $fileExtension = strtolower(end($tmp));
         $uploadPath = $currentDir . $uploadDirectory . basename($fileName); 
-        echo $uploadPath;
         if (isset($_POST['submit'])) {
             if (! in_array($fileExtension,$fileExtensions)) {
                 $errors[] = "This file extension is not allowed. Please upload an audio file";
@@ -41,7 +46,7 @@
             }
         }
 
-        $uploadPathFlac = $currentDir . $uploadDirectory . 'flac' . basename($filename);
+        $uploadPathFlac = __DIR__ . '/uploads/flac_audio.flac';
 
         $ffmpeg = FFMpeg\FFMpeg::create();
         $audio = $ffmpeg->open($uploadPath);
@@ -59,33 +64,32 @@
         
         
 
-        # Imports the Google Cloud client library
-        use Google\Cloud\Speech\SpeechClient;
+        // # Imports the Google Cloud client library
+        // use Google\Cloud\Speech\SpeechClient;
 
-        # Your Google Cloud Platform project ID
-        $projectId = 'dragonstone-1524506773397';
+        // # Your Google Cloud Platform project ID
+        // $projectId = 'dragonstone-1524506773397';
 
-        # Instantiates a client
-        $speech = new SpeechClient([
-            'projectId' => $projectId,
-            'languageCode' => 'en-US',
-        ]);
+        // # Instantiates a client
+        // $speech = new SpeechClient([
+        //     'projectId' => $projectId,
+        //     'languageCode' => 'en-US',
+        // ]);
 
-        # The name of the audio file to transcribe
-        $fileName = $uploadPathFlac;
+        // # The name of the audio file to transcribe
+        // $fileName = __DIR__.'/uploads/flac_audio.flac';
 
-        # The audio file's encoding and sample rate
-        $options = [
-            'encoding' => 'LINEAR16',
-            'sampleRateHertz' => 16000,
-        ];
+        // # The audio file's encoding and sample rate
+        // $options = [
+        //     'encoding' => 'FLAC',
+        // ];
 
-        # Detects speech in the audio file
-        $results = $speech->recognize(fopen($fileName, 'r'), $options);
+        // # Detects speech in the audio file
+        // $results = $speech->recognize(fopen($fileName, 'r'), $options);
 
-        foreach ($results as $result) {
-            echo 'Transcription: ' . $result->alternatives()[0]['transcript'] . PHP_EOL;
-        }
+        // foreach ($results as $result) {
+        //     echo 'Transcription: ' . $result->alternatives()[0]['transcript'] . PHP_EOL;
+        // }
     ?>
 </body>
 </html>
