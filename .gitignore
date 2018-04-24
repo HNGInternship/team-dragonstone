@@ -3,7 +3,7 @@
 /bower_components
 /themes
 /web
-/vendor
+vendor
 
 /hybrid/node_modules
 /hybrid/platforms
