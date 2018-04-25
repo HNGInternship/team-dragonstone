@@ -47,7 +47,7 @@ requirejs.config(
   }
 );
 
-require(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', , 'jet-composites/file-upload-card/loader'],
+require(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'jet-composites/file-upload-card/loader'],
   function (oj, ko, $) {
     $(function () {
       function init() {
