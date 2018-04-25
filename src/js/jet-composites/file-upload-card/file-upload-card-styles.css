@@ -1,0 +1,8 @@
+file-upload-card:not(.oj-complete){
+  visibility: hidden;
+}
+
+file-upload-card{
+	min-height: 50px;
+	width: 50px;
+}
