@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "311737e24d7d0ea4bd5fe992882f488f",
-    "content-hash": "190d5ef8b36910afa73d42616546d655",
+    "hash": "4444255928229762eec45fadc932bb6e",
+    "content-hash": "e18beb583f9a8b261185ee1bb36f6197",
     "packages": [
         {
             "name": "firebase/php-jwt",
@@ -101,178 +101,182 @@
             "time": "2018-04-06 19:26:30"
         },
         {
-            "name": "google/cloud-core",
-            "version": "v1.19.2",
+            "name": "google/cloud",
+            "version": "v0.42.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/GoogleCloudPlatform/google-cloud-php-core.git",
-                "reference": "c0d71125f31400b09d1a1097e6c336f3e2908532"
+                "url": "https://github.com/GoogleCloudPlatform/google-cloud-php.git",
+                "reference": "6ceb5be87004a6e145f2d42871b86dd7f49bbf06"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GoogleCloudPlatform/google-cloud-php-core/zipball/c0d71125f31400b09d1a1097e6c336f3e2908532",
-                "reference": "c0d71125f31400b09d1a1097e6c336f3e2908532",
+                "url": "https://api.github.com/repos/GoogleCloudPlatform/google-cloud-php/zipball/6ceb5be87004a6e145f2d42871b86dd7f49bbf06",
+                "reference": "6ceb5be87004a6e145f2d42871b86dd7f49bbf06",
                 "shasum": ""
             },
             "require": {
-                "google/auth": "^1.2",
+                "google/auth": "~0.9|^1.0",
+                "google/gax": "^0.25",
+                "google/proto-client": "^0.25",
                 "guzzlehttp/guzzle": "^5.3|^6.0",
                 "guzzlehttp/psr7": "^1.2",
                 "monolog/monolog": "~1",
                 "php": ">=5.5",
                 "psr/http-message": "1.0.*",
+                "ramsey/uuid": "~3",
                 "rize/uri-template": "~0.3"
             },
+            "replace": {
+                "google/cloud-bigquery": "0.3.0",
+                "google/cloud-core": "1.11.0",
+                "google/cloud-datastore": "1.0.2",
+                "google/cloud-dlp": "0.3.0",
+                "google/cloud-error-reporting": "0.6.0",
+                "google/cloud-language": "0.8.0",
+                "google/cloud-logging": "1.6.0",
+                "google/cloud-monitoring": "0.6.0",
+                "google/cloud-pubsub": "0.9.0",
+                "google/cloud-spanner": "0.8.0",
+                "google/cloud-speech": "0.8.0",
+                "google/cloud-storage": "1.2.0",
+                "google/cloud-trace": "0.3.2",
+                "google/cloud-translate": "1.0.1",
+                "google/cloud-videointelligence": "0.6.0",
+                "google/cloud-vision": "0.6.0"
+            },
             "require-dev": {
                 "erusev/parsedown": "^1.6",
-                "google/gax": "^0.31.1",
-                "opis/closure": "^3",
+                "league/json-guard": "^0.3",
                 "phpdocumentor/reflection": "^3.0",
-                "phpunit/phpunit": "^4.8|^5.0",
-                "squizlabs/php_codesniffer": "2.*"
+                "phpseclib/phpseclib": "^2",
+                "phpunit/phpunit": "4.8.*",
+                "squizlabs/php_codesniffer": "2.*",
+                "symfony/console": "^3.0",
+                "symfony/lock": "3.3.x-dev#1ba6ac9",
+                "vierbergenlars/php-semver": "^3.0"
             },
             "suggest": {
-                "opis/closure": "May be used to serialize closures to process jobs in the batch daemon. Please require version ^3.",
-                "symfony/lock": "Required for the Spanner cached based session pool. Please require the following commit: 3.3.x-dev#1ba6ac9"
+                "phpseclib/phpseclib": "May be used in place of OpenSSL for creating signed Cloud Storage URLs. Please require version ^2."
             },
             "bin": [
-                "bin/google-cloud-batch"
+                "src/Core/bin/google-cloud-batch"
             ],
             "type": "library",
             "extra": {
                 "component": {
-                    "id": "cloud-core",
-                    "target": "GoogleCloudPlatform/google-cloud-php-core.git",
-                    "path": "Core",
-                    "entry": "src/ServiceBuilder.php"
+                    "id": "google-cloud",
+                    "target": "git@github.com:jdpedrie-gcp/google-cloud-php.git",
+                    "path": "src",
+                    "entry": [
+                        "Version.php",
+                        "ServiceBuilder.php"
+                    ]
                 }
             },
             "autoload": {
                 "psr-4": {
-                    "Google\\Cloud\\Core\\": "src"
+                    "Google\\Cloud\\": "src"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "Apache-2.0"
             ],
-            "description": "Google Cloud PHP shared dependency, providing functionality useful to all components.",
-            "time": "2018-04-16 18:09:56"
-        },
-        {
-            "name": "google/cloud-speech",
-            "version": "v0.12.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/GoogleCloudPlatform/google-cloud-php-speech.git",
-                "reference": "714fee5940be9dbc27d274ade07c0e48e8a5ed45"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/GoogleCloudPlatform/google-cloud-php-speech/zipball/714fee5940be9dbc27d274ade07c0e48e8a5ed45",
-                "reference": "714fee5940be9dbc27d274ade07c0e48e8a5ed45",
-                "shasum": ""
-            },
-            "require": {
-                "google/cloud-core": "^1.14",
-                "google/gax": "^0.31.1",
-                "google/proto-client": "^0.37"
-            },
-            "require-dev": {
-                "erusev/parsedown": "^1.6",
-                "google/cloud-storage": "^1.3",
-                "phpdocumentor/reflection": "^3.0",
-                "phpunit/phpunit": "^4.8|^5.0",
-                "squizlabs/php_codesniffer": "2.*"
-            },
-            "suggest": {
-                "ext-grpc": "The gRPC extension enables use of the performant gRPC transport",
-                "ext-protobuf": "Provides a significant increase in throughput over the pure PHP protobuf implementation. See https://cloud.google.com/php/grpc for installation instructions."
-            },
-            "type": "library",
-            "extra": {
-                "component": {
-                    "id": "cloud-speech",
-                    "target": "GoogleCloudPlatform/google-cloud-php-speech.git",
-                    "path": "Speech",
-                    "entry": "src/SpeechClient.php"
+            "authors": [
+                {
+                    "name": "John Pedrie",
+                    "email": "john@pedrie.com"
+                },
+                {
+                    "name": "Dave Supplee",
+                    "email": "dwsupplee@gmail.com"
                 }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Google\\Cloud\\Speech\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache-2.0"
             ],
-            "description": "Cloud Speech Client for PHP",
-            "time": "2018-04-16 18:09:56"
+            "description": "Google Cloud Client Library",
+            "homepage": "http://github.com/GoogleCloudPlatform/google-cloud-php",
+            "keywords": [
+                "big query",
+                "bigquery",
+                "cloud",
+                "datastore",
+                "gcs",
+                "google",
+                "google api",
+                "google api client",
+                "google apis",
+                "google apis client",
+                "google cloud",
+                "google cloud platform",
+                "language",
+                "natural language",
+                "pub sub",
+                "pubsub",
+                "spanner",
+                "speech",
+                "stackdriver logging",
+                "storage",
+                "translate",
+                "translation",
+                "vision"
+            ],
+            "time": "2017-11-08 16:10:03"
         },
         {
             "name": "google/gax",
-            "version": "0.31.3",
+            "version": "0.25.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/gax-php.git",
-                "reference": "cae100c34c518e150db4adb6a1cfa6d5335d63f9"
+                "reference": "bca9e3de6fe537761c89db5115f45878243c11ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/gax-php/zipball/cae100c34c518e150db4adb6a1cfa6d5335d63f9",
-                "reference": "cae100c34c518e150db4adb6a1cfa6d5335d63f9",
+                "url": "https://api.github.com/repos/googleapis/gax-php/zipball/bca9e3de6fe537761c89db5115f45878243c11ba",
+                "reference": "bca9e3de6fe537761c89db5115f45878243c11ba",
                 "shasum": ""
             },
             "require": {
-                "google/auth": "^1.2.0",
-                "google/protobuf": "^3.5.1",
+                "google/auth": "~0.9|^1.0",
+                "google/protobuf": "^3.4",
                 "grpc/grpc": "^1.4",
-                "guzzlehttp/promises": "^1.3",
-                "guzzlehttp/psr7": "^1.2",
                 "php": ">=5.5"
             },
             "require-dev": {
-                "phpunit/phpunit": "^4.8.36",
+                "phpunit/phpunit": "4.8.*",
                 "squizlabs/php_codesniffer": "2.*"
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Google\\Api\\": "src/Api",
-                    "Google\\ApiCore\\": "src/ApiCore",
-                    "Google\\Cloud\\": "src/Cloud",
-                    "Google\\Iam\\": "src/Iam",
-                    "Google\\Jison\\": "src/Jison",
-                    "Google\\LongRunning\\": "src/LongRunning",
-                    "Google\\Rpc\\": "src/Rpc",
-                    "Google\\Type\\": "src/Type",
-                    "GPBMetadata\\Google\\": "metadata"
+                    "Google\\GAX\\": "src/",
+                    "Google\\GAX\\UnitTests\\": "tests/",
+                    "Google\\": "src/generated/Google/",
+                    "GPBMetadata\\": "src/generated/GPBMetadata/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "BSD-3-Clause"
             ],
-            "description": "Google API Core for PHP",
+            "description": "Google API Extensions for PHP",
             "homepage": "https://github.com/googleapis/gax-php",
             "keywords": [
                 "google"
             ],
-            "time": "2018-04-17 15:26:29"
+            "time": "2017-10-30 16:05:52"
         },
         {
             "name": "google/proto-client",
-            "version": "0.37.0",
+            "version": "0.25.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/proto-client-php.git",
-                "reference": "fa092b339351fc38d204e39ea2e8bf9d4084bf86"
+                "reference": "fb7f1f7bf750ed0121df6ffcb39add0c8639713a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/proto-client-php/zipball/fa092b339351fc38d204e39ea2e8bf9d4084bf86",
-                "reference": "fa092b339351fc38d204e39ea2e8bf9d4084bf86",
+                "url": "https://api.github.com/repos/googleapis/proto-client-php/zipball/fb7f1f7bf750ed0121df6ffcb39add0c8639713a",
+                "reference": "fb7f1f7bf750ed0121df6ffcb39add0c8639713a",
                 "shasum": ""
             },
             "require": {
@@ -281,7 +285,7 @@
             },
             "require-dev": {
                 "google/gax": ">=0.25.0",
-                "phpunit/phpunit": "^4.8.36"
+                "phpunit/phpunit": "4.8.*"
             },
             "type": "library",
             "autoload": {
@@ -299,7 +303,7 @@
             "keywords": [
                 "google"
             ],
-            "time": "2018-04-13 18:48:01"
+            "time": "2017-10-30 23:07:46"
         },
         {
             "name": "google/protobuf",
@@ -643,6 +647,54 @@
             "time": "2017-06-19 01:22:40"
         },
         {
+            "name": "paragonie/random_compat",
+            "version": "v2.0.12",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/paragonie/random_compat.git",
+                "reference": "258c89a6b97de7dfaf5b8c7607d0478e236b04fb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/258c89a6b97de7dfaf5b8c7607d0478e236b04fb",
+                "reference": "258c89a6b97de7dfaf5b8c7607d0478e236b04fb",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.*|5.*"
+            },
+            "suggest": {
+                "ext-libsodium": "Provides a modern crypto API that can be used to generate random bytes."
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "lib/random.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Paragon Initiative Enterprises",
+                    "email": "security@paragonie.com",
+                    "homepage": "https://paragonie.com"
+                }
+            ],
+            "description": "PHP 5.x polyfill for random_bytes() and random_int() from PHP 7",
+            "keywords": [
+                "csprng",
+                "pseudorandom",
+                "random"
+            ],
+            "time": "2018-04-04 21:24:14"
+        },
+        {
             "name": "psr/cache",
             "version": "1.0.1",
             "source": {
@@ -784,6 +836,86 @@
                 "psr-3"
             ],
             "time": "2016-10-10 12:19:37"
+        },
+        {
+            "name": "ramsey/uuid",
+            "version": "3.7.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ramsey/uuid.git",
+                "reference": "44abcdad877d9a46685a3a4d221e3b2c4b87cb76"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ramsey/uuid/zipball/44abcdad877d9a46685a3a4d221e3b2c4b87cb76",
+                "reference": "44abcdad877d9a46685a3a4d221e3b2c4b87cb76",
+                "shasum": ""
+            },
+            "require": {
+                "paragonie/random_compat": "^1.0|^2.0",
+                "php": "^5.4 || ^7.0"
+            },
+            "replace": {
+                "rhumsaa/uuid": "self.version"
+            },
+            "require-dev": {
+                "codeception/aspect-mock": "^1.0 | ~2.0.0",
+                "doctrine/annotations": "~1.2.0",
+                "goaop/framework": "1.0.0-alpha.2 | ^1.0 | ^2.1",
+                "ircmaxell/random-lib": "^1.1",
+                "jakub-onderka/php-parallel-lint": "^0.9.0",
+                "mockery/mockery": "^0.9.9",
+                "moontoast/math": "^1.1",
+                "php-mock/php-mock-phpunit": "^0.3|^1.1",
+                "phpunit/phpunit": "^4.7|^5.0",
+                "squizlabs/php_codesniffer": "^2.3"
+            },
+            "suggest": {
+                "ext-libsodium": "Provides the PECL libsodium extension for use with the SodiumRandomGenerator",
+                "ext-uuid": "Provides the PECL UUID extension for use with the PeclUuidTimeGenerator and PeclUuidRandomGenerator",
+                "ircmaxell/random-lib": "Provides RandomLib for use with the RandomLibAdapter",
+                "moontoast/math": "Provides support for converting UUID to 128-bit integer (in string form).",
+                "ramsey/uuid-console": "A console application for generating UUIDs with ramsey/uuid",
+                "ramsey/uuid-doctrine": "Allows the use of Ramsey\\Uuid\\Uuid as Doctrine field type."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Ramsey\\Uuid\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marijn Huizendveld",
+                    "email": "marijn.huizendveld@gmail.com"
+                },
+                {
+                    "name": "Thibaud Fabre",
+                    "email": "thibaud@aztech.io"
+                },
+                {
+                    "name": "Ben Ramsey",
+                    "email": "ben@benramsey.com",
+                    "homepage": "https://benramsey.com"
+                }
+            ],
+            "description": "Formerly rhumsaa/uuid. A PHP 5.4+ library for generating RFC 4122 version 1, 3, 4, and 5 universally unique identifiers (UUID).",
+            "homepage": "https://github.com/ramsey/uuid",
+            "keywords": [
+                "guid",
+                "identifier",
+                "uuid"
+            ],
+            "time": "2018-01-20 00:28:24"
         },
         {
             "name": "rize/uri-template",

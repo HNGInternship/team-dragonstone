@@ -1,4 +1,6 @@
-<?php 
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 # Includes the autoloader for libraries installed with composer
 require __DIR__ . '/vendor/autoload.php';
@@ -6,6 +8,8 @@ require __DIR__ . '/vendor/autoload.php';
 use Google\Cloud\Speech\SpeechClient;
 use Google\Cloud\Storage\StorageClient;
 use Google\Cloud\Core\ExponentialBackoff;
+
+putenv('GOOGLE_APPLICATION_CREDENTIALS=config/api-key.json');
 
 /**
  * Converter.php class focusing on GCP, Methods can be abstracted for AWS too
@@ -16,16 +20,13 @@ use Google\Cloud\Core\ExponentialBackoff;
  *      - Awaits transcription
  * Step 3: Return Json encoded response to the Frontend
  */
-
-
-
  
 class Converter {
 
     public $file;
     public $projectId = "dragonstone-1524506773397";
 
-    public function __construct( $filename='audio-samples/amy.wav' ) {
+    public function __construct( $filename='audio-samples/au4.flac' ) {
         $this->file = $filename;
     }
     
@@ -52,8 +53,8 @@ class Converter {
             //echo (json_encode(array ('transcript' => 'works'), JSON_FORCE_OBJECT)); // this is for testing
         }
         else {
-            // return json_encode(array ('transcript' => 'Error: unsupported file format'), JSON_FORCE_OBJECT);
-            echo (json_encode(array ('transcript' => 'Error: unsupported file format'), JSON_FORCE_OBJECT)); // this is for testing
+            return json_encode(array ('google' => 'Error: unsupported file format'), JSON_FORCE_OBJECT);
+            //echo (json_encode(array ('transcript' => 'Error: unsupported file format'), JSON_FORCE_OBJECT)); // this is for testing
         }
     }
 
@@ -66,86 +67,26 @@ class Converter {
 
         # The audio file's encoding and sample rate
         $options = [
-            'encoding' => 'LINEAR16',
-            'sampleRateHertz' => 16000,
+            'encoding' => 'FLAC',
+            //'sampleRateHertz' => 44100,
         ];
 
         # Detects speech in the audio file
         $results = $speech->recognize(fopen($this->file, 'r'), $options);
-
+                
         $this->sendResponse($results);
 
-        /*foreach ($results as $result) {
-            echo 'Transcription: ' . $result->alternatives()[0]['transcript'] . PHP_EOL;
-        }*/
     }
 
-    public function sendResponse( $result ) {
-        header('Cache-Control: no-cache, must-revalidate');
-        header('Content-type: application/json');
+    public function sendResponse( $results ) {
 
-        $alternative = array();
+        $alternative = '';
         foreach ($results as $result) {
-            $alternative .= $result->alternatives()[0];
-
-            //printf('Transcript: %s' . PHP_EOL, $alternative['transcript']);
-            //printf('Confidence: %s' . PHP_EOL, $alternative['confidence']);
+            $alternative .= $result->alternatives()[0]['transcript'];
         }
-        $response = json_encode(array ('transcript' => $alternative['transcript']), JSON_FORCE_OBJECT);
-
-        return $response;
+        $response = json_encode(array ('google' => $alternative), JSON_FORCE_OBJECT);
+        header('Content-Type: application/json');
+        echo ($response);
     }
-
-
-    /**
-     * Transcribe an audio file using Google Cloud Speech API
-     * Example:
-     * ```
-     * transcribe_async_gcs('your-bucket-name', 'audiofile.wav');
-     * ```.
-     *
-     * @param string $bucketName The Cloud Storage bucket name.
-     * @param string $onjectName The Cloud Storage object name.
-     * @param string $languageCode The Cloud Storage
-     *     be recognized. Accepts BCP-47 (e.g., `"en-US"`, `"es-ES"`).
-     * @param array $options configuration options.
-     *
-     * @return string the text transcription
-     */
-
-    /*public function transcribe_async_gcs($bucketName, $objectName, $languageCode = 'en-US', $options = []) {
-        
-        // Create the speech client
-        $speech = new SpeechClient([
-            'languageCode' => $languageCode,
-        ]);
-
-        // Fetch the storage file (audio file from GCP storage)
-        $storage = new StorageClient();
-        $object = $storage->bucket($bucketName)->object($objectName);
-
-        // Create the asyncronous processing of the Long audio file recognize operation
-        $operation = $speech->beginRecognizeOperation(
-            $object,
-            $options
-        );
-
-        // Wait for the operation to complete
-        $backoff = new ExponentialBackoff(10);
-        $backoff->execute(function () use ($operation) {
-            print('Waiting for operation to complete' . PHP_EOL);
-            $operation->reload();
-            if (!$operation->isComplete()) {
-                throw new Exception('Job has not yet completed', 500);
-            }
-        });
-
-        // Get the results
-        if ($operation->isComplete()) {
-            $results = $operation->results();
-            // Send response to frontend
-            $this->sendResponse($results);
-        }
-    }*/
 
 }

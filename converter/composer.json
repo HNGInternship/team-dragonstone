@@ -3,6 +3,6 @@
         "phpunit/phpunit": "^7.1"
     },
     "require": {
-        "google/cloud-speech": "^0.12.3"
+        "google/cloud": "^0.42.0"
     }
 }
