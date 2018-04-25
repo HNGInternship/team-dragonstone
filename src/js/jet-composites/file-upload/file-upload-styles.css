@@ -1,0 +1,8 @@
+file-upload:not(.oj-complete){
+  visibility: hidden;
+}
+
+file-upload{
+	min-height: 50px;
+	width: 50px;
+}
